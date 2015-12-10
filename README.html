@@ -1016,9 +1016,69 @@ body .markdown-body
 }
 </style><title>README</title></head><body><article class="markdown-body"><h1 id="meteorprototype"><a name="user-content-meteorprototype" href="#meteorprototype" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>meteorPrototype</h1>
 <h2 id="learning-meteorjs-and-keeping-js-skills-up-to-date-for-final-project-prototype-and-srp-at-the-hva"><a name="user-content-learning-meteorjs-and-keeping-js-skills-up-to-date-for-final-project-prototype-and-srp-at-the-hva" href="#learning-meteorjs-and-keeping-js-skills-up-to-date-for-final-project-prototype-and-srp-at-the-hva" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Learning meteor.js and keeping JS skills up to date for final project prototype and SRP at the HvA</h2>
+<p>Alexander Eerenberg, 2015</p>
 <p>Tutorial - Making a plan</p>
 <blockquote>
-<p>Om mijn ervaring zo effectief als mogelijk te kunnen delen heb ik het voornemen gevat elke stap en alles waar ik tegenaan loop zo zorgvuldig als mogelijk te documenteren. Allereerst is het van belang om mijn huidig kennisniveau te bepalen om een beter perspectief te bieden m.b.t. het niveau van instap voor de lezer. Herken je jezelf in dit niveau en durf je -net als ik- de sprong niet te wagen naar een wat geavanceerder framework/platform? Dan stel ik voor dat we dit samen gaan doen =).</p>
+<p>Om mijn ervaring zo effectief als mogelijk te kunnen delen heb ik het voornemen elke stap en alles waar ik tegenaan loop zo zorgvuldig als mogelijk te documenteren. Allereerst is het van belang om mijn huidig kennisniveau te bepalen om een beter perspectief te bieden m.b.t. het niveau van instap voor de lezer. Herken je jezelf in dit niveau en durf je -net als ik- de sprong niet te wagen naar een wat geavanceerder framework/platform? Dan stel ik voor dat we dit samen gaan doen =).</p>
 </blockquote>
+<p>Na het volgen en ontleden van de tutorial en meteor.js volgt mogelijk het moeilijkste gedeelte: iets voor jezelf maken. Je hebt een idee en weet niet echt hoe je dit moet gaan uitwerken. Op dit moment denk ik dat het voornamelijk belangrijk is om je processen goed in kaart te brengen. Weet wat je wilt en hoe het eruit moet gaan zien. Gebruik desnoods flowcharts e.d. om erachter te komen wat wanneer moet gebeuren.</p>
+<h3 id="inhoud"><a name="user-content-inhoud" href="#inhoud" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Inhoud</h3>
+<p>Inhoud volgt later.</p>
+<ul>
+<li>Tutorial</li>
+<li>Eigen module creeren</li>
+</ul>
 <hr />
-<p>De eerste bron die ik gebruik om mijn javascript kennis bij te spijkeren is die van javascriptissexy.com.</p></article></body></html>
+<h3 id="what-do-i-know"><a name="user-content-what-do-i-know" href="#what-do-i-know" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What do I know?</h3>
+<p>In schooljaar 2013-2014 heb ik het vak Frontend development 2 gevolgd. Hier zet ik de begrippen en methoden die daar zijn gehanteerd uiteen. Sleutelwoorden tijdens dat vak waren:</p>
+<ul>
+<li>Syntax</li>
+<li>Variabele</li>
+<li>Array</li>
+<li>Meesturen van data</li>
+<li>OOP</li>
+<li>Object</li>
+<li>Self invoking function</li>
+<li>Scope</li>
+<li>Routing</li>
+</ul>
+<p>Aan de hand van voorbeelden in de tutorial van meteor.js zal ik in gaan op deze materie gebaseerd op eigen ervaring.</p>
+<h4 id="meteorjs-to-do-app-tutorial"><a name="user-content-meteorjs-to-do-app-tutorial" href="#meteorjs-to-do-app-tutorial" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Meteor.js to-do app tutorial</h4>
+<p>Dit is de officele <a href="https://www.meteor.com/tutorials/blaze/creating-an-app">meteor.js tutorial</a> die gbruikt wordt tijdens dit project.</p>
+<p>Allereerst dien je natuurlijk meteor.js te installeren. Gebruik de installatie op <a href="https://www.meteor.com/install">https://www.meteor.com/install</a>. Ik raad Windows-gebruikers aan om Powershell te gebruiken in plaats van command-prompt. Dit omdat je wat makkelijker kan copy/pasten e.d.</p>
+<p>Het eerste stukje javascript uit de tutorial:</p>
+<h5 id="22-templates-starter-replacement-code"><a name="user-content-22-templates-starter-replacement-code" href="#22-templates-starter-replacement-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.2 Templates starter replacement code</h5>
+<p><pre><code class="javascript">    if (Meteor.isClient) {
+      // This code only runs on the client
+      Template.body.helpers({
+        tasks: [
+          { text: &quot;This is task 1&quot; },
+          { text: &quot;This is task 2&quot; },
+          { text: &quot;This is task 3&quot; }
+        ]
+      });
+    }
+</code></pre><br />
+Bovenstaande code wordt zoals vernoemd alleen door de client uitgevoerd. </p>
+<pre><code class="html">    &lt;head&gt;
+      &lt;title&gt;Todo List&lt;/title&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+      &lt;div class=&quot;container&quot;&gt;
+        &lt;header&gt;
+        &lt;/header&gt;
+          &lt;h1&gt;Todo List&lt;/h1&gt;
+
+        &lt;ul&gt;
+          {{#each tasks}}
+            {{&gt; task}}
+          {{/each}}
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/body&gt;
+
+    &lt;template name=&quot;task&quot;&gt;
+      &lt;li&gt;{{text}}&lt;/li&gt;
+    &lt;/template&gt;
+</code></pre></article></body></html>
